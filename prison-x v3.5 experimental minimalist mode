@@ -1,0 +1,298 @@
+--//First Window//--
+local w = library:CreateWindow('Functions')
+w:Section('Remove/Restore')
+local t = w:Toggle("Doors", {flag = "toggle1"}, function()
+if w.flags.toggle1 then
+game.Workspace.Doors.Parent = game.Lighting
+game.Workspace.Prison_Cellblock.doors.Parent = game.Lighting
+    else
+    game.Lighting.Doors.Parent = game.workspace
+  	game.Lighting.doors.Parent = workspace.Prison_Cellblock
+end
+end)
+
+local t = w:Toggle("Fences", {flag = "toggle2"}, function()
+if w.flags.toggle2 then
+    game.Workspace.Prison_Fences.Parent = game.Lighting
+    else
+    game.Lighting.Prison_Fences.Parent = game.workspace
+end
+end)
+
+local t = w:Toggle("Outer Walls", {flag = "toggle3"}, function()
+if w.flags.toggle3 then
+    game.workspace.Prison_OuterWall.prison_wall.Parent = game.Lighting
+    else
+    game.Lighting.prison_wall.Parent = game.workspace.Prison_OuterWall
+end
+end)
+
+local t = w:Toggle("Guard Towers", {flag = "toggle4"}, function()
+if w.flags.toggle4 then
+    for i = 1,6 do
+    game.workspace.Prison_OuterWall.Prison_guardtower.Parent = game.Lighting
+end
+	else
+    for i = 1,6 do
+    game.Lighting.Prison_guardtower.Parent = workspace.Prison_OuterWall
+	end
+end
+end)
+
+local function destroyinnerwalls(trueorfalse)
+if trueorfalse == true then
+L = game.Lighting
+PH = workspace.Prison_Halls
+PGO = workspace.Prison_Guard_Outpost
+PA = workspace.Prison_Administration
+PCB = workspace.Prison_Cellblock
+CFT = workspace.Prison_Cafeteria
+GA = workspace.Garages
+PGB = workspace.GuardBooth
+PH.walls.Parent = game.Lighting
+PH.lights.Parent = game.Lighting
+PH.roof.Parent = game.Lighting
+PH.glass.Parent = game.Lighting
+PGO.doorwindow.Parent = game.Lighting
+PGO.wall.Parent = game.Lighting
+PGO.lights.Parent = game.Lighting
+PGO.wallsegment.Parent = game.Lighting
+PGO.wallsegment.Parent = game.Lighting
+PGO.wallsegment.Parent = game.Lighting
+PGO.wallsegment.Parent = game.Lighting
+PGO.wallsegment.Parent = game.Lighting
+PGO.wallsegment.Parent = game.Lighting
+PGO.wallsegment.Parent = game.Lighting
+PGO.part.Parent = game.Lighting
+PGO.Part.Parent = game.Lighting
+PA.walls.Parent = game.Lighting
+PA.Part.Parent = game.Lighting
+PA.Part.Parent = game.Lighting
+PA.Part.Parent = game.Lighting
+PA.trim.Parent = game.Lighting
+PA.trim.Parent = game.Lighting
+PA.trimboi.Parent = game.Lighting
+PA.front.Parent = game.Lighting
+PCB.b_front.Parent = game.Lighting
+PCB.b_wall.Parent = game.Lighting
+PCB.c_wall.Parent = game.Lighting
+PCB.a_walls.Parent = game.Lighting
+PCB.a_front.Parent = game.Lighting
+PCB.c_ceiling.Parent = game.Lighting
+PCB.a_ceiling.Parent = game.Lighting
+PCB.b_ceiling.Parent = game.Lighting
+PCB.a_outerwall.Parent = game.Lighting
+PCB.b_outerwall.Parent = game.Lighting
+PCB.a_lights.Parent = game.Lighting
+PCB.b_lights.Parent = game.Lighting
+PCB.c_lights.Parent = game.Lighting
+PCB.Wedge.Parent = game.Lighting
+PCB.Wedge.Parent = game.Lighting
+CFT.building.Parent = game.Lighting
+CFT.lights.Parent = game.Lighting
+CFT.glassdividers.Parent = game.Lighting
+CFT.Wedge.Parent = L
+CFT.Wedge.Parent = L
+CFT.Wedge.Parent = L
+PCB.c_hallwall.Parent = L
+PCB.c_hallwall.Parent = L
+PCB.c_hallwall.Parent = L
+PCB.c_hallwall.Parent = L
+PCB.c_corner.Parent = L
+PCB.c_corner.Parent = L
+PCB.c_corner.Parent = L
+PCB.c_corner.Parent = L
+PCB.c_glass.Parent = L
+CFT.Floor.Parent = L
+CFT.Floor.Parent = L
+CFT.Floor.Parent = L
+CFT.Floor.Parent = L
+CFT.Model.Parent = L
+CFT.Model.Parent = L
+CFT.glass.Parent = L
+PGO.window.Parent = L
+PA.light_floor1.Parent = L
+PA.light_floor2.Parent = L
+PA.Part.Parent = L
+GA.Parent = L
+PGB.Prison_bollards.Parent = L
+PGB.Wedge.Parent = L
+PGB.Wedge.Parent = L
+PGB.Stonewall.Parent = L
+PGB.Stonewall.Parent = L
+PGB.Stonewall.Parent = L
+PGB.Stonewall.Parent = L
+PGB.Stonewall.Parent = L
+PGB.Stonewall.Parent = L
+PGB.Stonewall.Parent = L
+PGB.Stonewall.Parent = L
+PGB.Stonewall.Parent = L
+PGB.Stonewall.Parent = L
+PGB.Stonewall.Parent = L
+PGB.Stonewall.Parent = L
+PGB.Stonewall.Parent = L
+PGB.Stonewall.Parent = L
+PGB.Stonewall.Parent = L
+PGB.Stonewall.Parent = L
+PGB.Stonewall.Parent = L
+PGB.Stonewall.Parent = L
+PGB.Stonewall.Parent = L
+PGB.Stonewall.Parent = L
+PGB.Stonewall.Parent = L
+PGB.Stonewall.Parent = L
+PGB.Stonewall.Parent = L
+PGB.Part.Parent = L
+PGB.Part.Parent = L
+PGB.Model.Parent = L
+game:GetService("Workspace").Prison_OuterWall.prison_wall.Model.Parent = L
+    else
+    L = game.Lighting
+    PH = workspace.Prison_Halls
+    PGO = workspace.Prison_Guard_Outpost
+    PA = workspace.Prison_Administration
+    PCB = workspace.Prison_Cellblock
+    CFT = workspace.Prison_Cafeteria
+    GA = L.Garages
+    PGB = workspace.GuardBooth
+    L.walls.Parent = PH
+    L.lights.Parent = PH
+    L.roof.Parent = PH
+    L.glass.Parent = PH
+    L.doorwindow.Parent = PGO
+    L.wall.Parent = PGO
+    L.lights.Parent = PGO
+    L.wallsegment.Parent = PGO
+    L.wallsegment.Parent = PGO
+    L.wallsegment.Parent = PGO
+    L.wallsegment.Parent = PGO
+    L.wallsegment.Parent = PGO
+    L.wallsegment.Parent = PGO
+    L.wallsegment.Parent = PGO
+    L.part.Parent = PGO
+    L.Part.Parent = PGO
+    L.walls.Parent = PA
+    L.Part.Parent = PA
+    L.Part.Parent = PA
+    L.Part.Parent = PA
+    L.trim.Parent = PA
+    L.trim.Parent = PA
+    L.trimboi.Parent = PA
+    L.front.Parent = PA
+    L.b_front.Parent = PCB
+    L.b_wall.Parent = PCB
+    L.c_wall.Parent = PCB
+    L.a_walls.Parent = PCB
+    L.a_front.Parent = PCB
+    L.c_ceiling.Parent = PCB
+    L.a_ceiling.Parent = PCB
+    L.b_ceiling.Parent = PCB
+    L.a_outerwall.Parent = PCB
+    L.b_outerwall.Parent = PCB
+    L.a_lights.Parent = PCB
+    L.b_lights.Parent = PCB
+    L.c_lights.Parent = PCB
+    L.Wedge.Parent = PCB
+    L.Wedge.Parent = PCB
+    L.building.Parent = CFT
+    L.lights.Parent = CFT
+    L.glassdividers.Parent = CFT
+    L.Wedge.Parent = CFT
+    L.Wedge.Parent = CFT
+    L.Wedge.Parent = CFT
+    L.c_hallwall.Parent = PCB
+    L.c_hallwall.Parent = PCB
+    L.c_hallwall.Parent = PCB
+    L.c_hallwall.Parent = PCB
+    L.c_corner.Parent = PCB
+    L.c_corner.Parent = PCB
+    L.c_corner.Parent = PCB
+    L.c_corner.Parent = PCB
+    L.c_glass.Parent = PCB
+    L.Floor.Parent = CFT
+    L.Floor.Parent = CFT
+    L.Floor.Parent = CFT
+    L.Floor.Parent = CFT
+    L.Model.Parent = CFT
+    L.Model.Parent = CFT
+    L.glass.Parent = CFT
+    L.window.Parent = PGO
+    L.light_floor1.Parent = PA
+    L.light_floor2.Parent = PA
+    L.Part.Parent = PA
+    GA.Parent = workspace
+    L.Prison_bollards.Parent = PGB
+    L.Wedge.Parent = PGB
+    L.Wedge.Parent = PGB
+    L.Stonewall.Parent = PGB
+    L.Stonewall.Parent = PGB
+    L.Stonewall.Parent = PGB
+    L.Stonewall.Parent = PGB
+    L.Stonewall.Parent = PGB
+    L.Stonewall.Parent = PGB
+    L.Stonewall.Parent = PGB
+    L.Stonewall.Parent = PGB
+    L.Stonewall.Parent = PGB
+    L.Stonewall.Parent = PGB
+    L.Stonewall.Parent = PGB
+    L.Stonewall.Parent = PGB
+    L.Stonewall.Parent = PGB
+    L.Stonewall.Parent = PGB
+    L.Stonewall.Parent = PGB
+    L.Stonewall.Parent = PGB
+    L.Stonewall.Parent = PGB
+    L.Stonewall.Parent = PGB
+    L.Stonewall.Parent = PGB
+    L.Stonewall.Parent = PGB
+    L.Stonewall.Parent = PGB
+    L.Stonewall.Parent = PGB
+    L.Stonewall.Parent = PGB
+    L.Part.Parent = PGB
+    L.Part.Parent = PGB
+    L.Model.Parent = PGB
+    L.Model.Parent = game:GetService("Workspace").Prison_OuterWall.prison_wall
+end
+end
+
+local t = w:Toggle("Inner Walls", {flag = "INNERWALLS"}, function()
+if w.flags.INNERWALLS then
+    destroyinnerwalls(true)
+else
+    
+    destroyinnerwalls(false)
+end
+end)
+
+local t = w:Toggle("Boundaries", {flag = "toggle6"}, function()
+if w.flags.toggle6 then
+    workspace.BOUNDARY.Parent = game.Lighting
+    else
+    game.Lighting.BOUNDARY.Parent = workspace
+end
+end)
+
+w7 = library:CreateWindow("Other")
+
+w7:Section('Version: '..version)
+
+w7:Section('Credits')
+
+b = w7:Button('Kamiiskis_Aurelia')
+
+w7:Section('How to Close GUI')
+
+b = w7:Button('Right CTRL Button')
+
+w7:Section('Options')
+
+b = w7:Button('Destroy GUI', function()
+game.CoreGui.ScreenGui:Destroy()
+end)
+
+b = w7:Toggle("Disable Minimilist Mode", {flag = "modechange"}, function()
+if w7.flags.modechange then
+game.CoreGui.ScreenGui:Destroy()
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/Sjorbiia/X-Scripts/master/Prison-X'),true))()
+			else
+			wait(1)
+end
+end)
